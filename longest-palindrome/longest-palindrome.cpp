@@ -5,15 +5,15 @@ public:
         for(char c: s) counts[c]++;
         
         int result = 0;
-        bool odd_found = false;
+        bool odd_found = 0;
         for(auto& c: counts){
             if(c.second % 2 == 0) result += c.second;
             else{
-                odd_found = true;
+                odd_found = 1;
                 result += c.second - 1;
             }
         }
-        if(odd_found) result++;
+        if(odd_found==1) result++;
         return result;
         
     }
