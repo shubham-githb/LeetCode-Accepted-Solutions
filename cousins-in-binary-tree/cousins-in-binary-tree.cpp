@@ -20,10 +20,10 @@ public:
         cin.tie(NULL);
         cout.tie(NULL);
         
-        int xParent = -1;
+        int xParent = 0;
         int xHeight = Parentheight(root,xParent,x,0);
             
-        int yParent = -1;
+        int yParent = 0;
         int yHeight = Parentheight(root,yParent,y,0);
         
         if(yParent!=xParent and xHeight==yHeight)
