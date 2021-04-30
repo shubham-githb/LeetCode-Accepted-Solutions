@@ -1,3 +1,4 @@
+[Discussion Post (created on 30/3/2021 at 13:2)](https://leetcode.com/problems/cousins-in-binary-tree/discuss/1183585/Recursive-Easy-Implementation-or-O(n)-time)  
 <h2>993. Cousins in Binary Tree</h2><h3>Easy</h3><hr><div><p>In a binary tree, the root node is at depth <code>0</code>, and children of each depth <code>k</code> node are at depth <code>k+1</code>.</p>
 
 <p>Two nodes of a binary tree are <em>cousins</em> if they have the same depth, but have <strong>different parents</strong>.</p>
