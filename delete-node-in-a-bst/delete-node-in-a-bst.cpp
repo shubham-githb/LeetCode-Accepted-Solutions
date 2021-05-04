@@ -34,7 +34,7 @@ public:
             else{
                 root->val = inorder_successor(root);
                 root->right= deleteNode(root->right,root->val);
-            }
+            } 
         }
         
         return root;
