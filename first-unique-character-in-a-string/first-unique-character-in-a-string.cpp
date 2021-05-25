@@ -1,7 +1,7 @@
 class Solution {
 public:
     int firstUniqChar(string s) {
-        int n = s.size();
+        int n = s.length();
         map<char,int> hmap;
         for(int i=0;i<n;i++) 
             hmap[s[i]]++;
