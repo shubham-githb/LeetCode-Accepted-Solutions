@@ -19,7 +19,7 @@ public:
         int result =0;
         
         while(!pq.empty()){
-            vector<int> temp;
+           vector<int> temp;
             int time =0;
             for(int i=0;i<n+1;i++)
             {
