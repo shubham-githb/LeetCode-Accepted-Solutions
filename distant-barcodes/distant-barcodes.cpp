@@ -19,8 +19,10 @@ public:
         while(pq.top().first>0){
             auto p1 = pq.top();
             pq.pop();
-            barcodes.push_back(p1.second);
-            p1.first--;
+            if(p1.first>0){
+                barcodes.push_back(p1.second);
+                p1.first--;
+            }
             auto p2 = pq.top();
             pq.pop();
             if(p2.first>0){
