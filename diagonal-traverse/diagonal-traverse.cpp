@@ -16,7 +16,8 @@ public:
         while(row<m and col<n){
             if(up){
                 while(row>0 and col<n-1){
-                    res[i++]= grids[row][col];
+                    res[i]= grids[row][col];
+                    i++;
                     row--;
                     col++;
                 }
@@ -30,7 +31,8 @@ public:
             
             else {
                 while(col>0 and row<m-1){
-                    res[i++] = grids[row][col];
+                    res[i] = grids[row][col];
+                    i++;
                     row++;
                     col--;
                 }
