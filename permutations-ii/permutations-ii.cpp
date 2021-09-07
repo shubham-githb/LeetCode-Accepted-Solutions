@@ -7,10 +7,10 @@ class Solution {
         
         else{
             for(int i=0;i<vis.size();i++){
-                if(i>0 and vis[i-1] and nums[i-1]==nums[i]){
+                if(i>0 and vis[i-1]==true and nums[i-1]==nums[i]){
                     continue;
                 }
-                else if(vis[i]){
+                else if(vis[i]==true){
                     permute.push_back(nums[i]);
                     vis[i]=false;
                     solve(nums,vis,permute,result);
