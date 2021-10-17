@@ -10,28 +10,27 @@
  * };
  */
 class Solution {
-    bool isLeaf(TreeNode *root){
-        if(root==NULL)
-            return false;
+    int sum =0;
+public:
+    int sumOfLeftLeaves(TreeNode* root) {
+        helper(root);
+        return sum;
+    }
+    
+    void helper(TreeNode* root){
+        if(root==NULL) return ;
+        if(isLeaf(root->left)) sum = sum + root->left->val;
+        helper(root->left);
+        helper(root->right);
+    }
+    
+    bool isLeaf(TreeNode* root){
+        if(root==NULL) return false;
         if(root->left==NULL and root->right==NULL){
-            return true;
+            return right;
         }
         
         return false;
     }
-public:
-    int sumOfLeftLeaves(TreeNode* root) {
-        int res =0;
-        if(root!=NULL){
-                if(isLeaf(root->left)){
-                    res = res + root->left->val;
-                }
-                else
-                    res = res + sumOfLeftLeaves(root->left);
-                res = res + sumOfLeftLeaves(root->right);
-            }
     
-        return res;
-        
-    }
 };
