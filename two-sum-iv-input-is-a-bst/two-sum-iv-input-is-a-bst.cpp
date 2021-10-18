@@ -10,23 +10,18 @@
  * };
  */
 class Solution {
-    bool isPairSum(TreeNode* root, int sum, unordered_set<int> &s){
-        if(root==NULL){
-            return false;
-        }
-        if(isPairSum(root->left,sum,s)==true)
-            return true;
-        if(s.find(sum-root->val)!=s.end())
-            return true;
-        else
-            s.insert(root->val);
-        return isPairSum(root->right,sum,s);
-    }
-    
 public:
     bool findTarget(TreeNode* root, int k) {
-        unordered_set<int> hset;
-        return isPairSum(root,k,hset);
-        
+        unordered_map<int,int> mp;
+        return dfs(root,k,mp);
+    }
+    bool dfs(TreeNode* root,int k,unordered_map<int,int> &mp) {
+        if(!root)
+            return false;
+        if(mp.find(k - root->val) != mp.end())
+            return true;
+        mp[root->val]++;
+       
+          return  dfs(root->left,k,mp) ||dfs(root->right,k,mp);
     }
 };
