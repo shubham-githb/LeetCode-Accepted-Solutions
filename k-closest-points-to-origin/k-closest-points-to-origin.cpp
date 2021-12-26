@@ -1,12 +1,13 @@
 class Solution {
 public:
     vector<vector<int>> kClosest(vector<vector<int>>& points, int k) {
+        vector<vector<int>> results;
         int n = points.size();
-         vector<pair<int,pair<int,int>>> v;
+        vector<pair<int,pair<int,int>>> v;
         int dist;
-        for(auto it: points){
-            dist = it[0]*it[0] + it[1]*it[1];
-            v.push_back({dist,{it[0],it[1]}});
+        for(auto x: points){
+            dist = (x[0]*x[0] + x[1]*x[1]);
+            v.push_back({dist,{x[0],x[1]}});
         }
         
         sort(v.begin(),v.end());
@@ -19,6 +20,5 @@ public:
         }
         
         return ans;
-        
     }
 };
