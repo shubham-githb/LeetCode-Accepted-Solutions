@@ -1,47 +1,24 @@
-// class Solution {
-// public:
-//     int minAddToMakeValid(string s) {
-//         int n = s.size();
-//         stack<char> st;
-//         for(int i=0;i<n;i++){
-//             if(st.empty()){
-//                 st.push(s[i]);
-//                 continue;
-//             }
-//             if(s[i]!=st.top()){
-//                 if(s[i]==')' and st.top() == '('){
-//                     st.pop();
-//                 }
-//                 else st.push(s[i]);
-//             }
-//         }
-        
-//         return st.size();
-//     }
-// };
-
 class Solution {
 public:
     int minAddToMakeValid(string s) {
         int n = s.size();
-        stack<char> stack;
+        stack<char> st;
         for(int i=0;i<n;i++){
-            if(stack.empty()){
-                stack.push(s[i]);
+            if(st.empty()==true){
+                st.push(s[i]);
                 continue;
             }
-            if(s[i]!=stack.top()){
-                if(s[i]==')' and stack.top() == '('){
-                    stack.pop();
+            if(s[i]!=st.top()){
+                if(s[i]==')' and st.top()=='('){
+                    st.pop();
                 }
-                else stack.push(s[i]);
+                else st.push(s[i]);
             }
-            
-            else
-                stack.push(s[i]);
+            else{
+                st.push(s[i]);
+            }
         }
         
-        return stack.size();
-        
+        return st.size();
     }
 };
