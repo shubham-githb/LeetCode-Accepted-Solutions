@@ -18,10 +18,7 @@ public:
         if(neg==false){
             // int i=0;
             sort(s.begin(),s.end());
-       
-        }
-        
-        if(s[0]=='0'){
+                    if(s[0]=='0'){
                 int i=1;
                 while(i<s.size()){
                     if(s[i]!='0'){
@@ -31,6 +28,10 @@ public:
                     i++;
                 }
             }
+       
+        }
+        
+
         
         if(neg) return -stoll(str);
         return stoll(s);
