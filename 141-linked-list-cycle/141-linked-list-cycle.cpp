@@ -12,7 +12,7 @@ public:
         unordered_map<ListNode* , bool> hmap;
         ListNode* temp = head;
         while(temp!=NULL){
-            if(hmap.count(temp)!=0){
+            if(hmap.find(temp)!=hmap.end()){
                 return true;
             }
             else{
