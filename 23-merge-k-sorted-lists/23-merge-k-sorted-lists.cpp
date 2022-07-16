@@ -11,12 +11,35 @@
 class Solution {
 public:
     ListNode* mergeKLists(vector<ListNode*>& lists) {
+//         priority_queue<int,vector<int>,greater<int>> mini;
+//         for(int i=0;i<lists.size();i++){
+//             ListNode* curr = lists[i];
+//             while(curr){
+//                 mini.push(curr->val);
+//                 curr = curr->next;
+//             }
+//         }
+        
+//         if(mini.size()==0){
+//             return NULL;
+//         }
+        
+//         ListNode* res = new ListNode(mini.top());
+//         ListNode* head = res;
+//         mini.pop();
+//         while(mini.size()>0){
+//             res->next = new ListNode(mini.top());
+//             res= res->next;
+//             mini.pop();
+//         }
+        
+//      return head;
         priority_queue<int,vector<int>,greater<int>> mini;
         for(int i=0;i<lists.size();i++){
             ListNode* curr = lists[i];
-            while(curr){
+            while(curr!=NULL){
                 mini.push(curr->val);
-                curr = curr->next;
+                curr=curr->next;
             }
         }
         
@@ -24,12 +47,15 @@ public:
             return NULL;
         }
         
-        ListNode* res = new ListNode(mini.top());
-        ListNode* head = res;
+        ListNode* ans = new ListNode(mini.top());
         mini.pop();
+        ListNode* head = ans;
+        
         while(mini.size()>0){
-            res->next = new ListNode(mini.top());
-            res= res->next;
+            int x = mini.top();
+            // mini.pop();
+            ans->next = new ListNode(x);
+            ans=ans->next;
             mini.pop();
         }
         
