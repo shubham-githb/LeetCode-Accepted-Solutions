@@ -34,31 +34,56 @@ public:
 //         }
         
 //      return head;
-        priority_queue<int,vector<int>,greater<int>> mini;
+//         priority_queue<int,vector<int>,greater<int>> mini;
+//         for(int i=0;i<lists.size();i++){
+//             ListNode* curr = lists[i];
+//             while(curr!=NULL){
+//                 mini.push(curr->val);
+//                 curr=curr->next;
+//             }
+//         }
+        
+//         if(mini.size()==0){
+//             return NULL;
+//         }
+        
+//         ListNode* ans = new ListNode(mini.top());
+//         mini.pop();
+//         ListNode* head = ans;
+        
+//         while(mini.size()>0){
+//             int x = mini.top();
+//             // mini.pop();
+//             ans->next = new ListNode(x);
+//             ans=ans->next;
+//             mini.pop();
+//         }
+        
+//         return head;
+        priority_queue<int,vector<int>,greater<int>> minHeap;
         for(int i=0;i<lists.size();i++){
             ListNode* curr = lists[i];
             while(curr!=NULL){
-                mini.push(curr->val);
-                curr=curr->next;
+                minHeap.push(curr->val);
+                curr = curr->next;
             }
         }
         
-        if(mini.size()==0){
+        if(minHeap.size()==0){
             return NULL;
         }
         
-        ListNode* ans = new ListNode(mini.top());
-        mini.pop();
+        ListNode* ans = new ListNode(minHeap.top());
+        minHeap.pop();
         ListNode* head = ans;
         
-        while(mini.size()>0){
-            int x = mini.top();
-            // mini.pop();
+        while(minHeap.size()>0){
+            int x = minHeap.top();
             ans->next = new ListNode(x);
-            ans=ans->next;
-            mini.pop();
+            ans = ans->next;
+            minHeap.pop();
+            
         }
-        
         return head;
     }
 };
